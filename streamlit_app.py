@@ -23,8 +23,8 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
 
 #NewcSelection to display fruitvice api response
-import request
-fruitvice_response = request.get("https://www.fruityvice.com/api/fruit/watermelon")
+import requests
+fruitvice_response = requests.get("https://www.fruityvice.com/api/fruit/watermelon")
 streamlit.text(fruitvice_response)
 
 
