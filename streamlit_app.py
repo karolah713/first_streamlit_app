@@ -7,7 +7,7 @@ streamlit.header('Breakfast Menu')
 streamlit.text('🥣 Omega 3 & Bluberry Oatmeal')
 streamlit.text('🥬 Kale, Spinach & Rocket Smoothie')
 streamlit.text('🐔 Hard-Boiled Free-Range Egg')
-streamlit.text('🥑🍞 Avocado Toast')
+streamlit.textstreamlit.text('🥑🍞 Avocado Toast')
 
 streamlit.title("🍌🍓 Build your Own Fruit Smoothie 🥝🍇")
 
@@ -24,9 +24,11 @@ streamlit.dataframe(fruits_to_show)
 
 #NewcSelection to display fruitvice api response
 streamlit.header('Fruitvice Fruit Advice!')
+fruit_choice = streamlit.text_input("What fruit would you like information about?", 'Kiwi")
+streamlit.write('The user entered', fruit_choice)
 
 import requests
-fruitvice_response = requests.get("https://www.fruityvice.com/api/fruit/" + "kiwi")
+fruitvice_response = requests.get("https://www.fruityvice.com/api/fruit/" + fruit_choice)
 
 
 # take the json version of the response and normalize it
