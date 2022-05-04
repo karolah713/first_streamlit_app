@@ -1,6 +1,7 @@
 import streamlit
 import pandas
 
+
 streamlit.title("My Mom\'s New Healthy Diner")
 streamlit.header('Breakfast Menu')
 streamlit.text('🥣 Omega 3 & Bluberry Oatmeal')
@@ -20,4 +21,10 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 # display the table on the page
 streamlit.dataframe(fruits_to_show)
+
+#NewcSelection to display fruitvice api response
+import request
+fruitvice_response = request.get("https://www.fruityvice.com/api/fruit/watermelon")
+streamlit.text(fruitvice_response)
+
 
